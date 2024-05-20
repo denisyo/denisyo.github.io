@@ -1,0 +1,200 @@
+<!doctype html>
+<html class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulgaria - Explore & Adventure</title>
+    <style>
+        body, h1, h2, h3, h4, h5, h6, p {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0; /* Ensure no default margin is applied */
+        }
+        .carousel-container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+            position: absolute;
+            width: 100%;
+        }
+        .carousel-item {
+            width: 100vw;
+            height: 100vh;
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .carousel-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.65;
+        }
+        .carousel-text {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+			max-width: 50%;  /* Adjust the width as necessary */
+		    padding: 20px;   /* Provides padding inside the container */
+			word-wrap: break-word;  /* Ensures long words do not overflow */
+			margin: auto; 
+			font-weight: bold;
+        }
+		
+		.carousel-title {
+		   font-size: 2rem;
+		   font-weight: bold;
+		}
+
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px; /* larger arrows for better visibility */
+            color: white;
+            cursor: pointer;
+            user-select: none;
+            z-index: 5;
+        }
+        .arrow.left { left: 20px; }
+        .arrow.right { right: 20px; }
+		
+		 .nav-button {
+        position: fixed;
+        /* Make nav button fixed */
+        top: 5%;
+        right: 2%;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        z-index: 2;
+        /* Ensure nav button is above header */
+      }
+
+ .nav-container {
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* Full width */
+        background-color: #121212;
+        /* Background color */
+        padding: 20px;
+      }
+
+      .nav-container.open {
+        transform: translateY(0);
+      }
+
+      .nav-container a {
+        color: white;
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: block;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-container a:hover {
+        color: #ccc;
+      }
+
+
+ svg {
+        fill: white;
+        /* SVG color */
+      }
+	  
+	  .logo {
+        position: fixed;
+        /* Make logo fixed */
+        top: 5%;
+        left: 3%;
+        width: 80px;
+        /* Keeping size */
+        z-index: 2;
+        /* Ensure logo is above header */
+      }
+	  
+    </style>
+</head>
+<body>
+    <img src="Images/logo.png" alt="Logo" class="logo">
+       <div class="nav-button" onclick="toggleNav()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" />
+          </svg>
+          <div class="nav-container" id="navbar">
+            <div style="padding: 20px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="white" d="M18.3 5.71a1 1 0 00-1.41 0L12 10.59 7.11 5.7A1 1 0 105.7 7.11L10.59 12l-4.89 4.89a1 1 0 101.41 1.41L12 13.41l4.89 4.89a1 1 0 001.41-1.41L13.41 12l4.89-4.89a1 1 0 000-1.41z"></path>
+              </svg>
+              <a href="index.html" style="color: white; font-size: 1.125rem; font-weight: 600; margin-bottom: 10px; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Начало</a>
+              <a href="zabelejitelnosti.html" style="color: white; font-size: 1.125rem; font-weight: 600; margin-bottom: 10px; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Забележителности</a>
+              <a href="gallery.html" style="color: white; font-size: 1.125rem; font-weight: 600; margin-bottom: 10px; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Галерия</a>
+              <a href="About Us.html" style="color: white; font-size: 1.125rem; font-weight: 600; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">За Нас</a>
+            </div>
+          </div>
+        </div>
+     <div class="nav-container" id="navbar">
+        <div style="padding: 20px;">
+            <a href="index.html">Начало</a>
+            <a href="zabelejitelnosti.html">Забележителности</a>
+            <a href="gallery.html">Галерия</a>
+            <a href="About Us.html">За Нас</a>
+        </div>
+    </div>
+     <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item">
+                <img src="Images/djamiq1.jpg" class="carousel-image">
+                <div class="carousel-text">
+                    <div class="carousel-title">Джамията</div>
+                    <div class="carousel-description"> Намира се на площад "Свобода" в самия център на гр. Дупница, срещу сградата на читалището. Според редица източници, джамията, датира още от късни години на XV век. Тя е носител на архитектурно и историческо значение за града.</div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="Images/djamiq2.jpg" class="carousel-image">
+                <div class="carousel-text">
+                     <div class="carousel-title"></div>
+                    <div class="carousel-description"> Паметникът на кулата в Дупница е построен на мястото на стара черква, трансформиран в значим религиозен център през вековете. След освобождението от османско владичество, минарето е съборено, но сградата е запазена като културен паметник. В наши дни тя служи като изложбена зала, олицетворявайки съжителството на християнската и османската вяра в историята на града.</div>
+                </div>
+            </div>
+            <!-- Add more items as needed -->
+        </div>
+        <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+        <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+    </div>
+</div>
+
+    <script>
+        function toggleNav() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.toggle('open');
+        }
+      let currentIndex = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
+
+        function moveSlide(step) {
+            currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+            document.querySelector('.carousel').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
+</body>
+</html>

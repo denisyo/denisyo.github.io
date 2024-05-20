@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulgaria - Explore & Adventure</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #121212;
+        /* Background color */
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        /* Ensure container covers entire screen */
+        position: relative;
+        /* Add relative positioning */
+      }
+
+      .header-image {
+        background-image: url('Images/bulgaria.png');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        height: 100vh;
+        /* Cover entire screen */
+        z-index: 1;
+        /* Ensure header is above other content */
+      }
+
+      .logo {
+        position: fixed;
+        /* Make logo fixed */
+        top: 5%;
+        left: 3%;
+        width: 80px;
+        /* Keeping size */
+        z-index: 2;
+        /* Ensure logo is above header */
+      }
+
+      .nav-button {
+        position: fixed;
+        /* Make nav button fixed */
+        top: 5%;
+        right: 2%;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        z-index: 2;
+        /* Ensure nav button is above header */
+      }
+
+      svg {
+        fill: white;
+        /* SVG color */
+      }
+
+      .text-section {
+        background-color: #1A1A1A;
+        /* Dark background for text section */
+        color: white;
+        padding: 50px 20px;
+        /* Padding around the text */
+        text-align: center;
+        flex: 1;
+        /* Fill remaining space in container */
+        z-index: 0;
+        /* Ensure text section is below header */
+      }
+
+      footer {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background-color: #121212;
+        padding: 16px;
+        color: #9CA3AF;
+        font-size: 0.875rem;
+        text-align: center;
+      }
+
+      .nav-container {
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* Full width */
+        background-color: #121212;
+        /* Background color */
+        padding: 20px;
+      }
+
+      .nav-container.open {
+        transform: translateY(0);
+      }
+
+      .nav-container a {
+        color: white;
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: block;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-container a:hover {
+        color: #ccc;
+      }
+
+      .text-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1A1A1A;
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+        flex: 1;
+        z-index: 0;
+      }
+
+      .text-content {
+        flex: 1;
+        text-align: left;
+        padding-right: 20px;
+      }
+
+      .image-container {
+        position: relative;
+        display: inline-block;
+        margin-top: 50px;
+        /* Adjust the top margin */
+        margin-right: 50px;
+        /* Adjust the right margin */
+      }
+
+      .image-container img {
+        width: 576px;
+        height: 405px;
+        /* Updated height */
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .text-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Center vertically */
+        align-items: center;
+        /* Center horizontally */
+        text-align: center;
+        margin-top: 50px;
+        /* Adjust as needed */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-image">
+        <img src="Images/logo.png" alt="Logo" class="logo">
+        <div class="nav-button" onclick="toggleNav()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" />
+          </svg>
+          <div class="nav-container" id="navbar">
+            <div style="padding: 20px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="white" d="M18.3 5.71a1 1 0 00-1.41 0L12 10.59 7.11 5.7A1 1 0 105.7 7.11L10.59 12l-4.89 4.89a1 1 0 101.41 1.41L12 13.41l4.89 4.89a1 1 0 001.41-1.41L13.41 12l4.89-4.89a1 1 0 000-1.41z"></path>
+              </svg>
+              <a href="index.html" style="color: white; font-size: 1.125rem; font-weight: 600; margin-bottom: 10px; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Начало</a>
+              <a href="zabelejitelnosti.html" style="color: white; font-size: 1.125rem; font-weight: 600; margin-bottom: 10px; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Забележителности</a>
+              <a href="gallery.html" style="color: white; font-size: 1.125rem; font-weight: 600; margin-bottom: 10px; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Галерия</a>
+              <a href="About Us.html" style="color: white; font-size: 1.125rem; font-weight: 600; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Автор</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: row; justify-content: space-between;">
+        <div style="display: flex; flex-direction: column; justify-content: space-between; width: 50%; margin-top: 20px;">
+          <!-- Main Content -->
+          <div style="padding-left: 24px; align-self: flex-start;">
+            <h1 style="position: relative; font-size: 5rem; font-weight: bold; background-image: linear-gradient(to bottom, #3C3C3C, #121212); -webkit-background-clip: text; color: transparent; top: 50px; left: 100px;"> Дупница </h1>
+            <h1 style="position: relative; font-size: 4rem; font-weight: bold; color: white; margin-bottom: 6px; z-index: 2; margin-top: -40px; padding-left: 170px;"> Изследвай & <br> Приключи </h1>
+            <p style="font-size: 1rem; width: auto; color: white; padding-left: 80px; margin-top: 10px; margin-left: 99px; " align="justify"> Дупница - Сърцето на Приключението в България. Разположена в обятията на мистичната Рила планина, Дупница предлага изключителна комбинация от природни красоти и културно наследство. От тайнствените сили на Седемте рилски езера до величествени храмове и забележителности, този град привлича с уникална атмосфера за приключения. Подайте се по пътеките на историята и природата, и открийте защо Дупница е не само врата към Рила, но и съкровищница на българските традиции и мистика. Изживейте България в нейната автентичност – изследвайте и се приключете с Дупница. </p>
+          </div>
+          <div style="font-size: 2rem; padding-left: 12px; padding-bottom: 12px;">
+            <i class="fas fa-chevron-down" style="color: #121212;"></i>
+          </div>
+        </div>
+        <div class="image-container" style="width: 50%; text-align: right; margin-bottom: 300px; margin-top: 150px;">
+          <img src="Images/titla.jpg" alt="Title Image" style="height: 405px;">
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div style="max-width: 1280px; margin: 0 auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <a href="index.html" style="margin-bottom: 12px; margin-right: 24px; display: flex; align-items: center;"></a>
+          <ul style="display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 6px; font-size: 0.875rem; font-weight: 500; color: inherit;">
+            <li style="margin-right: 16px; list-style-type: none;">
+              <a href="index.html" style="color: inherit; text-decoration: none; transition: color 0.2s ease-in-out; position: relative;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Начало</a>
+            </li>
+            <li style="margin-right: 16px; list-style-type: none;">
+              <a href="zabelejitelnosti.html" style="color: inherit; text-decoration: none; transition: color 0.2s ease-in-out; position: relative;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Забележителности</a>
+            </li>
+            <li style="margin-right: 16px; list-style-type: none;">
+              <a href="gallery.html" style="color: inherit; text-decoration: none; transition: color 0.2s ease-in-out; position: relative;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Галерия</a>
+            </li>
+            <li style="list-style-type: none;">
+              <a href="About Us.html" style="color: inherit; text-decoration: none; transition: color 0.2s ease-in-out; position: relative;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Автор</a>
+            </li>
+          </ul>
+        </div>
+        <hr style="margin-top: 24px; margin-bottom: 32px; border-color: rgba(156, 163, 175, 0.2); border-width: 1px; border-style: solid;">
+        <span>SuperMemory Softworks &copy; 2024</span>
+      </div>
+    </footer>
+    <script>
+      // Toggle navigation
+      function toggleNav() {
+        var navbar = document.getElementById('navbar');
+        navbar.classList.toggle('open');
+      }
+    </script>
+  </body>
+</html>

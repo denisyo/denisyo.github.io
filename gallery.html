@@ -1,0 +1,267 @@
+<!doctype html>
+<html class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bulgaria - Explore & Adventure</title>
+      <style>
+        body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        font-family: 'Poppins', sans-serif;
+		  background-color: #121212;
+      }
+
+
+ .nav-button {
+        position: fixed;
+        /* Make nav button fixed */
+        top: 5%;
+        right: 2%;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        z-index: 2;
+        /* Ensure nav button is above header */
+      }
+
+ .nav-container {
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* Full width */
+        background-color: #121212;
+        /* Background color */
+        padding: 20px;
+      }
+
+      .nav-container.open {
+        transform: translateY(0);
+      }
+
+      .nav-container a {
+        color: white;
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: block;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-container a:hover {
+        color: #ccc;
+      }
+
+ .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+            padding: 20px 50px; 
+			margin-top: 100px; /* Adjust this value as needed */
+			margin-left: 30px;
+        }
+
+       .gallery img {
+        width: 100%; /* Set slightly wider width */
+        height: 250px; /* Keep fixed height */
+        object-fit: cover; /* Ensure the image covers its container */
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+        border-radius: 10px; /* Add rounded corners */
+    }
+	
+	 svg {
+        fill: white;
+        /* SVG color */
+      }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .modal-content img {
+            width: 100%;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+		
+		footer {
+        width: 100%;
+        height: auto;
+        /* Adjust based on your footer content */
+      }
+	  
+	  .logo {
+        position: fixed;
+        /* Make logo fixed */
+        top: 5%;
+        left: 3%;
+        width: 80px;
+        /* Keeping size */
+        z-index: 2;
+        /* Ensure logo is above header */
+      }
+	  
+	  footer {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background-color: #121212;
+        padding: 16px;
+        color: #9CA3AF;
+        font-size: 0.875rem;
+        text-align: center;
+      }
+
+      </style>
+   </head>
+   <body>
+
+		<img src="Images/logo.png" alt="Logo" class="logo">
+       <div class="nav-button" onclick="toggleNav()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" />
+          </svg>
+          <div class="nav-container" id="navbar">
+            <div style="padding: 20px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="white" d="M18.3 5.71a1 1 0 00-1.41 0L12 10.59 7.11 5.7A1 1 0 105.7 7.11L10.59 12l-4.89 4.89a1 1 0 101.41 1.41L12 13.41l4.89 4.89a1 1 0 001.41-1.41L13.41 12l4.89-4.89a1 1 0 000-1.41z"></path>
+              </svg>
+              <a href="index.html" style="color: white; font-size: 1.125rem; font-weight: 600; margin-bottom: 10px; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Начало</a>
+              <a href="zabelejitelnosti.html" style="color: white; font-size: 1.125rem; font-weight: 600; margin-bottom: 10px; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Забележителности</a>
+              <a href="gallery.html" style="color: white; font-size: 1.125rem; font-weight: 600; margin-bottom: 10px; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Галерия</a>
+              <a href="About Us.html" style="color: white; font-size: 1.125rem; font-weight: 600; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Автор</a>
+            </div>
+          </div>
+        </div>
+    
+	<!-- Gallery -->
+    <div class="gallery" style=">
+        <img src="Images/hram1.jpg" alt="Image 1" onclick="openModal('Images/hram1.jpg')">
+        <img src="Images/hram2.jpg" alt="Image 1" onclick="openModal('Images/hram2.jpg')">
+		<img src="Images/dom1.jpg" alt="Image 1" onclick="openModal('Images/dom1.jpg')">
+        <img src="Images/dom2.jpg" alt="Image 1" onclick="openModal('Images/dom2.jpg')">
+		<img src="Images/kula1.jpg" alt="Image 1" onclick="openModal('Images/kula1.jpg')">
+        <img src="Images/kula2.jpg" alt="Image 1" onclick="openModal('Images/kula2.jpg')">
+		<img src="Images/kula3.jpg" alt="Image 1" onclick="openModal('Images/kula3.jpg')">
+        <img src="Images/park1.jpg" alt="Image 1" onclick="openModal('Images/park1.jpg')">
+		<img src="Images/park2.jpg" alt="Image 1" onclick="openModal('Images/park2.jpg')">
+        <img src="Images/djamiq1.jpg" alt="Image 1" onclick="openModal('Images/djamiq1.jpg')">
+		<img src="Images/djamiq2.jpg" alt="Image 1" onclick="openModal('Images/djamiq2.jpg')">
+		<img src="Images/titla.jpg" alt="Image 1" onclick="openModal('Images/titla.jpg')">
+		<img src="Images/parkrila1.jpg" alt="Image 1" onclick="openModal('Images/parkrila1.jpg')">
+		<img src="Images/parkrila2.jpg" alt="Image 1" onclick="openModal('Images/parkrila2.jpg')">
+        <!-- Add more images here -->
+    </div>
+
+
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+	
+
+       <footer>
+      <div style="max-width: 1280px; margin: 0 auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <a href="index.html" style="margin-bottom: 12px; margin-right: 24px; display: flex; align-items: center;"></a>
+          <ul style="display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 6px; font-size: 0.875rem; font-weight: 500; color: inherit;">
+            <li style="margin-right: 16px; list-style-type: none;">
+              <a href="index.html" style="color: inherit; text-decoration: none; transition: color 0.2s ease-in-out; position: relative;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Начало</a>
+            </li>
+            <li style="margin-right: 16px; list-style-type: none;">
+              <a href="zabelejitelnosti.html" style="color: inherit; text-decoration: none; transition: color 0.2s ease-in-out; position: relative;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Забележителности</a>
+            </li>
+            <li style="margin-right: 16px; list-style-type: none;">
+              <a href="gallery.html" style="color: inherit; text-decoration: none; transition: color 0.2s ease-in-out; position: relative;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Галерия</a>
+            </li>
+            <li style="list-style-type: none;">
+              <a href="About Us.html" style="color: inherit; text-decoration: none; transition: color 0.2s ease-in-out; position: relative;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Автор</a>
+            </li>
+          </ul>
+        </div>
+        <hr style="margin-top: 24px; margin-bottom: 32px; border-color: rgba(156, 163, 175, 0.2); border-width: 1px; border-style: solid;">
+        <span>SuperMemory Softworks &copy; 2024</span>
+      </div>
+    </footer>
+	  
+	  
+      <script>
+         // Toggle navigation
+         function toggleNav() {
+             var navbar = document.getElementById('navbar');
+             navbar.classList.toggle('open');
+         }
+		  function openModal(imageUrl) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = imageUrl;
+			
+			 modal.onclick = function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+      </script>
+   </body>
+</html>

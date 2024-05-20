@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автор - Денис Й.</title>
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        font-family: 'Poppins', sans-serif;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+		background-color: #121212;
+      }
+
+    
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content {
+        flex: 1;
+      }
+
+	   .nav-button {
+        position: fixed;
+        /* Make nav button fixed */
+        top: 5%;
+        right: 2%;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        z-index: 2;
+        /* Ensure nav button is above header */
+      }
+
+ .nav-container {
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* Full width */
+        background-color: #121212;
+        /* Background color */
+        padding: 20px;
+      }
+
+      .nav-container.open {
+        transform: translateY(0);
+      }
+
+      .nav-container a {
+        color: white;
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: block;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-container a:hover {
+        color: #ccc;
+      }
+	  
+	  
+      svg {
+        fill: white;
+        /* SVG color */
+      }
+	  
+	  .logo {
+        position: fixed;
+        /* Make logo fixed */
+        top: 5%;
+        left: 3%;
+        width: 80px;
+        /* Keeping size */
+        z-index: 2;
+        /* Ensure logo is above header */
+      }
+	  
+	   footer {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background-color: #121212;
+        padding: 16px;
+        color: #9CA3AF;
+        font-size: 0.875rem;
+        text-align: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    
+	<img src="Images/logo.png" alt="Logo" class="logo">
+       <div class="nav-button" onclick="toggleNav()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" />
+          </svg>
+          <div class="nav-container" id="navbar">
+            <div style="padding: 20px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="white" d="M18.3 5.71a1 1 0 00-1.41 0L12 10.59 7.11 5.7A1 1 0 105.7 7.11L10.59 12l-4.89 4.89a1 1 0 101.41 1.41L12 13.41l4.89 4.89a1 1 0 001.41-1.41L13.41 12l4.89-4.89a1 1 0 000-1.41z"></path>
+              </svg>
+              <a href="index.html" style="color: white; font-size: 1.125rem; font-weight: 600; margin-bottom: 10px; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Начало</a>
+              <a href="zabelejitelnosti.html" style="color: white; font-size: 1.125rem; font-weight: 600; margin-bottom: 10px; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Забележителности</a>
+              <a href="gallery.html" style="color: white; font-size: 1.125rem; font-weight: 600; margin-bottom: 10px; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">Галерия</a>
+              <a href="About Us.html" style="color: white; font-size: 1.125rem; font-weight: 600; display: block;" onmouseover="this.style.color='#ccc'" onmouseout="this.style.color='white'">За Нас</a>
+            </div>
+          </div>
+        </div>
+	
+   
+  <div style="margin: auto; max-width: 1000px;">
+  <div style="display: flex; align-items: flex-start;">
+    <!-- Author's Image -->
+<div style="flex: 1; margin-right: 150px; margin-top: 20px; position: relative;">
+  <img src="Images/az.jpg" alt="Author's Image" style="border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); max-width: 200%;">
+  <div style="position: absolute; bottom: -55px; left: 50%; transform: translateX(-50%); width: 100%;">
+    <div style="color: white; font-size: 1.5rem; text-align: center; padding-left: 70px;">Денис Йорданов</div> <!-- Name directly under the image adjusted to the right and a bit lower -->
+  </div>
+</div>
+
+
+
+    <!-- Author's Info -->
+    <div style="flex: 6; color: white;">
+      <div>
+        <h2 style="font-size: 2rem; font-weight: bold;">Автор</h2>
+        <p style="margin-top: 2rem; font-size: 1.25rem;" align="justify">Завършвам "Акад. Сергей П. Корольов", където моят академичен път се фокусира върху Икономика и Информатика. Гордостта от постигането в тези области ме мотивира всеки ден, надграждайки моята страст към знанието и иновациите. Вярвам, че образованието ми там полага твърдата основа за моето бъдеще, като ми дава не само академични умения, но и жизнени уроци, които ще нося със себе си.</p>
+      </div>
+      <!-- Contact & Social Links -->
+      <div style="margin-top: 1rem;">
+        <a href="mailto:yordanovdenis@gmail.com" style="color: #1E90FF; text-decoration: none;"><i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>yordanovdenis@gmail.com</a>
+        <div style="margin-top: 0.5rem;">
+          <!-- Social Icons -->
+          <a href="https://twitter.com/TrollicusRCE" style="color: #1E90FF; text-decoration: none;"><i class="fab fa-twitter" style="margin-right: 1rem;"></i></a>
+          <a href="https://github.com/Trollicus" style="color: #888; text-decoration: none;"><i class="fab fa-github" style="margin-right: 1rem;"></i></a>
+          <!-- Add more social links as needed -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 2rem; color: white;">
+    <h2 style="font-size: 2rem; font-weight: bold;">Свържете се с нас</h2>
+    <form style="margin-top: 1rem;">
+      <div style="margin-bottom: 1rem;">
+        <label for="subject" style="font-size: 1.25rem; color: #fff;">Заглавие</label>
+        <input type="text" id="subject" name="subject" style="width: 100%; padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <label for="email" style="font-size: 1.25rem; color: #fff;">E-Mail</label>
+        <input type="email" id="email" name="email" style="width: 100%; padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px;">
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <label for="message" style="font-size: 1.25rem; color: #fff;">Вашето съобщение</label>
+        <textarea id="message" name="message" rows="4" style="width: 100%; padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+      </div>
+      <button type="submit" style="padding: 0.5rem 1rem; font-size: 1.25rem; background-color: #1E90FF; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Изпрати</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+	
+    
+       <footer>
+      <div style="max-width: 1280px; margin: 0 auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <a href="index.html" style="margin-bottom: 12px; margin-right: 24px; display: flex; align-items: center;"></a>
+          <ul style="display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 6px; font-size: 0.875rem; font-weight: 500; color: inherit;">
+            <li style="margin-right: 16px; list-style-type: none;">
+              <a href="index.html" style="color: inherit; text-decoration: none; transition: color 0.2s ease-in-out; position: relative;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Начало</a>
+            </li>
+            <li style="margin-right: 16px; list-style-type: none;">
+              <a href="zabelejitelnosti.html" style="color: inherit; text-decoration: none; transition: color 0.2s ease-in-out; position: relative;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Забележителности</a>
+            </li>
+            <li style="margin-right: 16px; list-style-type: none;">
+              <a href="gallery.html" style="color: inherit; text-decoration: none; transition: color 0.2s ease-in-out; position: relative;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Галерия</a>
+            </li>
+            <li style="list-style-type: none;">
+              <a href="About Us.html" style="color: inherit; text-decoration: none; transition: color 0.2s ease-in-out; position: relative;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">За Нас</a>
+            </li>
+          </ul>
+        </div>
+        <hr style="margin-top: 24px; margin-bottom: 32px; border-color: rgba(156, 163, 175, 0.2); border-width: 1px; border-style: solid;">
+        <span>SuperMemory Softworks &copy; 2024</span>
+      </div>
+    </footer>
+	
+    <script>
+      // Toggle navigation
+      function toggleNav() {
+        var navbar = document.getElementById('navbar');
+        navbar.classList.toggle('open');
+      }
+    </script>
+  </body>
+</html>
